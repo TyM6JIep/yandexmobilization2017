@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">YandexMobilization</string>
+
+    <string name="title_activity_main">Переводчик</string>
+    <string name="title_activity_history">История переводов</string>
+
+    <string name="yandex_translator_api_key">trnsl.1.1.20170423T133429Z.c71bbd1399256149.2b4b3a3556f80efe347696432de0fdadcc7162b5</string>
+
+    <string name="message_copy">Скопировано</string>
+    <string name="message_big_size">Размер переводимого текста должен быть меньше 10 000 символов</string>
+    <string name="message_unknown_error">Неизвестная ошибка</string>
+    <string name="message_connection">Проверьте подключение к интернету</string>
+    <string name="message_only_favorite">Отображать только избранные</string>
+    <string name="message_search_history">Поиск в истории переводов</string>
+    <string name="message_empty_list">Список пуст</string>
+    <string name="message_input_text">Введите текст</string>
+    <string name="message_translate">Перевод</string>
+    <string name="message_search">Поиск языка</string>
+
+    <string name="lang_ru">Русский</string>
+    <string name="lang_en">Английский</string>
+    <string name="lang_ru_code">ru</string>
+    <string name="lang_en_code">en</string>
+</resources>

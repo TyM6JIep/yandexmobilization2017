@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.yandexmobilization.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <android.support.v7.widget.CardView
+        app:cardBackgroundColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="2dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/background_bordered">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:background="@null"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/button_language_from"
+                android:textSize="12sp"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                style="@style/IconImageButton"
+                android:layout_gravity="center"
+                android:id="@+id/button_replace"
+                android:src="@drawable/ic_arrows"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:background="@null"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/button_language_to"
+                android:textSize="12sp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="2dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp"
+                    android:padding="5dp">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:hint="@string/message_input_text"
+                        android:textColorHint="@color/colorAccent"
+                        android:background="@null"
+                        android:id="@+id/edit_text"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="5dp"
+                        android:maxLines="5"/>
+
+                    <ImageButton
+                        style="@style/IconImageButton"
+                        android:id="@+id/button_clear"
+                        android:layout_below="@id/edit_text"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/ic_clear"/>
+                    <ImageButton
+                        style="@style/IconImageButton"
+                        android:id="@+id/button_translate"
+                        android:src="@drawable/ic_tranlate"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+                    <ImageButton
+                        style="@style/IconImageButton"
+                        android:id="@+id/button_copy"
+                        android:src="@drawable/ic_copy"
+                        android:layout_below="@id/edit_text"
+                        android:layout_toLeftOf="@id/button_translate" />
+                    <ImageButton
+                        style="@style/IconImageButton"
+                        android:id="@+id/button_favorite"
+                        android:src="@drawable/ic_bookmark"
+                        android:layout_below="@id/edit_text"
+                        android:layout_toLeftOf="@id/button_copy" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="2dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/message_translate"
+                        android:id="@+id/text_translate"/>
+                    <ImageButton
+                        style="@style/IconImageButton"
+                        android:id="@+id/button_copy_translate"
+                        android:layout_below="@id/text_translate"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_copy"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

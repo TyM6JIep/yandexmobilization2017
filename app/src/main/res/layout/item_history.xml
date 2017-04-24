@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.chauthai.swipereveallayout.SwipeRevealLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:mode="same_level"
+    app:dragEdge="right"
+    android:layout_marginBottom="10dp"
+    android:id="@+id/swipe">
+
+    <FrameLayout
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_wrapper">
+
+        <RelativeLayout
+            android:background="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:id="@+id/swipe_menu">
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:background="#F0F0F0"
+                android:id="@+id/layout_remove">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="centerInside"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_delete" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="#b2b9bd"
+                android:gravity="center"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/layout_remove"
+                android:layout_toStartOf="@+id/layout_remove"
+                android:id="@+id/layout_edit">
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <!-- Your main layout here -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_wrapper">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#898989" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:padding="10dp"
+            android:id="@+id/content">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:id="@+id/image_bookmark"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_bookmark_empty" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/text_language"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/image_bookmark"
+                android:layout_toLeftOf="@id/text_language"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_translate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_text"
+                android:layout_toRightOf="@id/image_bookmark"
+                android:layout_toLeftOf="@id/text_language"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </FrameLayout>
+</com.chauthai.swipereveallayout.SwipeRevealLayout>
