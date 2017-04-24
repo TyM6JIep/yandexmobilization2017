@@ -30,8 +30,6 @@ import cz.msebera.android.httpclient.Header;
 
 public class HttpClient {
 
-    //todo реализовать слушателей дисконекта в активити
-
     private static Gson mGson;
     private static List<ConnectionListener> mListeners = new ArrayList<>();
 

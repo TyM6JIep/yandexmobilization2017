@@ -123,6 +123,9 @@ public class MainActivity extends AppCompatActivity implements
             @Override
             public void onClick(View view) {
                 String text = mEditText.getText().toString().trim();
+                if (text.length() == 0) {
+                    return;
+                }
                 List<HistoryItem> list = HistoryItem.find(HistoryItem.class, "text = ?", text);
                 if (list != null && list.size() != 0) {
                     HistoryItem item = list.get(0);
@@ -148,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements
                 ClipData clip = ClipData.newPlainText(mEditText.getText().toString(), mEditText.getText().toString());
                 clipboard.setPrimaryClip(clip);
 
-                Toast.makeText(MainActivity.this, getString(R.string.message_copy), Toast.LENGTH_SHORT).show(); //todo
+                Toast.makeText(MainActivity.this, getString(R.string.message_copy), Toast.LENGTH_SHORT).show();
             }
         });
         findViewById(R.id.button_copy_translate).setOnClickListener(new View.OnClickListener() {
@@ -158,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements
                 ClipData clip = ClipData.newPlainText(mTextTranslate.getText().toString(), mTextTranslate.getText().toString());
                 clipboard.setPrimaryClip(clip);
 
-                Toast.makeText(MainActivity.this, getString(R.string.message_copy), Toast.LENGTH_SHORT).show(); //todo
+                Toast.makeText(MainActivity.this, getString(R.string.message_copy), Toast.LENGTH_SHORT).show();
             }
         });
         initDefaultLanguage(mButtonLangFrom, mButtonLangTo);
@@ -178,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private void translate() {
         String text = mEditText.getText().toString();
-        if (text.length() <= 10000) { //todo
+        if (text.length() <= 10000) {
             SupportLanguage.translate(this, text, String.format("%s-%s", mCodeFrom, mCodeTo), new ResponseCallback<Translation>() {
                 @Override
                 public void onSuccess(Translation response) {
@@ -204,6 +207,9 @@ public class MainActivity extends AppCompatActivity implements
 
     private void saveTranslation(Translation translation) {
         String text = mEditText.getText().toString().trim();
+        if (text.length() == 0) {
+            return;
+        }
         List<HistoryItem> list = HistoryItem.find(HistoryItem.class, "text = ?", new String[]{text});
         if (list != null && list.size() == 0) {
             HistoryItem item = new HistoryItem(text, translation.getText().get(0), translation.getLang());
@@ -263,7 +269,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onFailure() {
-        Toast.makeText(this, getString(R.string.message_connection), Toast.LENGTH_LONG).show(); //todo
+        Toast.makeText(this, getString(R.string.message_connection), Toast.LENGTH_LONG).show();
     }
 
     @Override
